@@ -1,0 +1,10 @@
+const stages=[
+{title:"🕵️ Mission 1",progress:"15%",html:`<h3>Find the Office Legend</h3><p>☕ Loves coffee</p><p>💻 Handles work like a professional</p><p>😊 Brings positivity wherever she goes</p><p>🎉 Another successful work anniversary completed!</p><p><em>Can you guess who it is?</em></p>`},
+{title:"👗 Mystery Reveal",progress:"40%",html:`<h3>Clue #2</h3><p>An elegant silhouette appears...</p><img src="assets/mystery.jpg"><p>✨ Looking graceful as always...</p>`},
+{title:"📸 Identity Revealed",progress:"75%",html:`<h3>Mission Complete!</h3><img src="assets/reveal.jpg"><p>Ladies and Gentlemen...</p><h2 style="color:#FFD54F">Prathicksha Murthi</h2><p>🎉 The Office Legend has been found!</p>`},
+{title:"🏆 Happy Work Anniversary",progress:"100%",html:`<h2 style="color:#FFD54F">🎉 Happy Work Anniversary 🎉</h2><h1>Prathicksha Murthi</h1><p>Another year of dedication, hard work, positivity and inspiring everyone around you.</p><p>Thank you for making every workplace brighter with your smile and kindness.</p><p>May this new year bring you happiness, success, good health and new opportunities.</p><h2 style="color:#FF69B4">❤️ Wishing you many more successful years ahead! ❤️</h2><p>🏆 Office Legend Award Unlocked 🏆</p>`}
+];
+const landing=document.getElementById("landing"),game=document.getElementById("game"),start=document.getElementById("startBtn"),next=document.getElementById("nextBtn"),title=document.getElementById("title"),content=document.getElementById("content"),bar=document.getElementById("progressBar");
+let i=0;
+function render(){title.innerHTML=stages[i].title;content.innerHTML=stages[i].html;bar.style.width=stages[i].progress;if(i===stages.length-1){next.innerHTML="🎉 Celebrate Again";next.onclick=()=>location.reload();}else{next.innerHTML="Continue →";next.onclick=()=>{i++;render();}}}
+start.onclick=()=>{landing.classList.remove("active");game.classList.add("active");render();};
