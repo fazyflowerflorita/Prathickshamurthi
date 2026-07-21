@@ -1,0 +1,1 @@
+Copy your photos into assets as mystery.jpg and reveal.jpg, then open index.html.
